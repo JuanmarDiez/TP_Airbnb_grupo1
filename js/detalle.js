@@ -16,10 +16,14 @@ window.addEventListener('load', function(){
     .then ( alojamientos => {
         const alojamientoAux = alojamientos.find(alojamiento => alojamiento.id === uid);
 
+        const {imagen, titulo, precio} = alojamientoAux;
+
+        this.document.title = titulo;
+
         detalleContenedor.innerHTML = `
-        <h1>${alojamientoAux.titulo}</h1>
-        <img src="${alojamientoAux.imagen}" alt="">
-        <h2>Precio: $<span>${alojamientoAux.precio}</span></h2>
+        <h1>${titulo}</h1>
+        <img src="${imagen}" alt="">
+        <h2>Precio: $<span>${precio}</span></h2>
         `;
 
     });

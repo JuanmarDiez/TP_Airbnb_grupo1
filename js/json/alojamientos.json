@@ -7,6 +7,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 100,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "destacados" 
     },
     {
@@ -17,6 +18,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 200,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "destacados"
     },
     {
@@ -27,6 +29,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 300,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "destacados"
     },
     {
@@ -37,6 +40,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 400,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "destacados"
     },
     {
@@ -47,6 +51,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 500,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "destacados"
     },
     {
@@ -57,6 +62,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 600,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "destacados"
     },
     {
@@ -67,6 +73,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 700,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "destacados"
     },
     {
@@ -77,6 +84,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 100,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "bariloche" 
     },
     {
@@ -87,6 +95,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 200,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "bariloche"
     },
     {
@@ -97,6 +106,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 300,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "bariloche"
     },
     {
@@ -107,6 +117,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 400,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "bariloche"
     },
     {
@@ -117,6 +128,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 500,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "bariloche"
     },
     {
@@ -127,6 +139,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 600,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "bariloche"
     },
     {
@@ -137,6 +150,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 700,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "bariloche"
     },
     {
@@ -147,6 +161,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 100,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "misiones" 
     },
     {
@@ -157,6 +172,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 200,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "misiones"
     },
     {
@@ -167,6 +183,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 300,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "misiones"
     },
     {
@@ -177,6 +194,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 400,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "misiones"
     },
     {
@@ -187,6 +205,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 500,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "misiones"
     },
     {
@@ -197,6 +216,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 600,
         "dias-disponibles": 10,
+        "puntuacion": 4.95,
         "categoria": "misiones"
     },
     {
@@ -207,6 +227,7 @@
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 700,
         "dias-disponibles": 10,
-        "categoria": "bariloche"
+        "puntuacion": 4.95,
+        "categoria": "misiones"
     }
 ]

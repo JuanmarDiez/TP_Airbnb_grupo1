@@ -26,29 +26,30 @@ function cargarAlojamientos(alojamientos) {
 
     for (var i = 0; i < list.length; i++){
 
-        const categoriaAlojamiento = list[i][0].categoria;
+        const categoriaAlo = list[i][0].categoria;
 
         alojamientosContenedor.innerHTML += `
-        <section class="seccion-alojamientos">
-            <h3>${categoriaAlojamiento.toUpperCase()}</h3>
-            <div id="${categoriaAlojamiento}-contenedor" class="carrusel">
+        <section>
+            <h2 class="fs-4 fw-bold text-capitalize">${categoriaAlo}</h2>
+            <div id="${categoriaAlo}-contenedor" class="carousel">
         `;
 
-        let catContenedor = document.querySelector(`#${categoriaAlojamiento}-contenedor`);
+        let catContenedor = document.querySelector(`#${categoriaAlo}-contenedor`);
         
         list[i].forEach( alojamiento => {
 
-            const {imagen, titulo, id} = alojamiento;
+            const {id, imagen, titulo, precio, puntuacion} = alojamiento;
 
             const item = document.createElement("div");
-            item.classList.add("elemento");
+            item.classList.add("card");
+            item.classList.add("border-0");
+            item.classList.add("rounded-3");
             item.innerHTML += `
+            <a href="./pages/detalle.html?${id}">
             <img src="${imagen}" alt="${titulo}">
-            <div class="elemento-descripcion">
-                <p><b>${titulo}</b></p>
-                <a href="./pages/detalle.html?${id}">
-                <button class="elemento-detalle" id="${id}">Detalle</button>
-                </a>
+            <div class="card-body">
+                <h4>${titulo}</h4>
+                <p>$${precio} USD - ★ ${puntuacion}</p>
             </div>
             `;
 
