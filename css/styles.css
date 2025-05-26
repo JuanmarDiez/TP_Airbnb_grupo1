@@ -21,6 +21,11 @@ li {
 	flex-direction: column;
 }
 
+.div-contenedor-alojamientos {
+	display: flex;
+	flex-direction: column;
+}
+
 .seccion-alojamientos {
 	display: flex;
 	flex-direction: column;
@@ -29,7 +34,7 @@ li {
 }
 
 .carrusel{
- 	display: flex;
+	display: flex;
  	flex-wrap: nowrap;
  	overflow: scroll;
 	padding: 1rem;

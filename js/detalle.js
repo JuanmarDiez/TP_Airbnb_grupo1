@@ -5,35 +5,16 @@ window.addEventListener('load', function(){
     let uid = (location.search).replace('?','');
     console.log(uid);
     
-    const pedirDestacados = async () => {
-    const resp = await fetch ("../js/json/destacados.json");
+    const pedirAlojamientos = async () => {
+    const resp = await fetch ("../js/json/alojamientos.json");
     let alojamientos = await resp.json();
     return alojamientos;
     }
 
-    const pedirBariloche = async () => {
-    const resp = await fetch ("../js/json/bariloche.json");
-    let alojamientos = await resp.json();
-    return alojamientos;
-    }
-
-    let destacados = pedirDestacados();
-    let bariloche = pedirBariloche();
-    let alojamientos = Promise.all([destacados, bariloche]);
-
+    let alojamientos = pedirAlojamientos();
     alojamientos
     .then ( alojamientos => {
-
-        const [dest, bari] = alojamientos;
-
-        console.log(dest);
-        console.log(bari);
-
-        let alojamientoAux = dest.find(des => des.id === uid);
-
-        if (!alojamientoAux){
-            alojamientoAux = bari.find(bar => bar.id === uid);
-        }
+        const alojamientoAux = alojamientos.find(alojamiento => alojamiento.id === uid);
 
         detalleContenedor.innerHTML = `
         <h1>${alojamientoAux.titulo}</h1>

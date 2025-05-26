@@ -1,85 +1,65 @@
 /********** CONTENEDORES **********/
-
-let barilocheContenedor = document.querySelector("#bariloche-contenedor");
-let destacadosContenedor = document.querySelector("#destacados-contenedor");
-let catAlojamiento = document.querySelector("#categoria-alojamiento");
+let alojamientosContenedor = document.querySelector("#alojamientos-contenedor");
 
 /********** CARGAR ALOJAMIENTOS **********/
 
-const pedirDestacados = async () => {
-    const resp = await fetch ("../js/json/destacados.json");
-    let alojamientosDestacados = await resp.json();
-    return alojamientosDestacados;
+const pedirAlojamientos = async () => {
+    const resp = await fetch ("../js/json/alojamientos.json");
+    let alojamientos = await resp.json();
+    return alojamientos;
 }
 
-let alojamientosDestacados = pedirDestacados();
+let alojamientos = pedirAlojamientos();
 
-alojamientosDestacados
-.then( alojamientosDestacados => {
-    cargarDestacados(alojamientosDestacados);
+alojamientos
+.then( alojamientos => {
+    cargarAlojamientos(alojamientos);
 });
 
-function cargarDestacados(alojamientosDestacados) {
+function cargarAlojamientos(alojamientos) {
 
-    destacadosContenedor.innerHTML = "";
+    let destacados = alojamientos.filter( (alojamiento) => alojamiento.categoria === "destacados");
+    let bariloche = alojamientos.filter( (alojamiento) => alojamiento.categoria === "bariloche");
+    let misiones = alojamientos.filter( (alojamiento) => alojamiento.categoria === "misiones");
 
-    alojamientosDestacados.forEach( alojamiento => {
+    let list = [destacados, bariloche, misiones];
 
-        const {imagen, titulo, id} = alojamiento;
-        
-        const item = document.createElement("div");
-        item.classList.add("elemento");
-        item.innerHTML += `
-        <img src="${imagen}" alt="${titulo}">
-        <div class="elemento-descripcion">
-            <p><b>${titulo}</b></p>
-            <a href="./pages/detalle.html?${id}">
-            <button class="elemento-detalle" id="${id}">Detalle</button>
-            </a>
-        </div>
+    for (var i = 0; i < list.length; i++){
+
+        const categoriaAlojamiento = list[i][0].categoria;
+
+        alojamientosContenedor.innerHTML += `
+        <section class="seccion-alojamientos">
+            <h3>${categoriaAlojamiento.toUpperCase()}</h3>
+            <div id="${categoriaAlojamiento}-contenedor" class="carrusel">
         `;
 
-        destacadosContenedor.append(item);
-
-    });
-
-};
-
-const pedirBariloche = async () => {
-    const resp = await fetch ("../js/json/bariloche.json");
-    let alojamientosBariloche = await resp.json();
-    return alojamientosBariloche;
-}
-
-let alojamientosBariloche = pedirBariloche();
-
-alojamientosBariloche
-.then( alojamientosBariloche => {
-    cargarBariloche(alojamientosBariloche);
-});
-
-function cargarBariloche(alojamientosBariloche) {
-
-    barilocheContenedor.innerHTML = "";
-
-    alojamientosBariloche.forEach( alojamiento => {
-
-        const {imagen, titulo, id} = alojamiento;
+        let catContenedor = document.querySelector(`#${categoriaAlojamiento}-contenedor`);
         
-        const item = document.createElement("div");
-        item.classList.add("elemento");
-        item.innerHTML += `
-        <img src="${imagen}" alt="${titulo}">
-        <div class="elemento-descripcion">
-            <p><b>${titulo}</b></p>
-            <a href="./pages/detalle.html?${id}">
-            <button class="elemento-detalle" id="${id}">Detalle</button>
-            </a>
-        </div>
+        list[i].forEach( alojamiento => {
+
+            const {imagen, titulo, id} = alojamiento;
+
+            const item = document.createElement("div");
+            item.classList.add("elemento");
+            item.innerHTML += `
+            <img src="${imagen}" alt="${titulo}">
+            <div class="elemento-descripcion">
+                <p><b>${titulo}</b></p>
+                <a href="./pages/detalle.html?${id}">
+                <button class="elemento-detalle" id="${id}">Detalle</button>
+                </a>
+            </div>
+            `;
+
+            catContenedor.append(item);
+
+        });
+
+        alojamientosContenedor.innerHTML +=`
+            </div>
+        </section>
         `;
-
-        barilocheContenedor.append(item);
-
-    });
+    }
 
 };
