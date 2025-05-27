@@ -6,9 +6,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 100,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "destacados" 
+        "categoria": "destacados", 
+        "huespedes": 5
     },
     {
         "id": "alojamiento-02",
@@ -17,9 +18,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 200,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "destacados"
+        "categoria": "destacados",
+        "huespedes": 7
     },
     {
         "id": "alojamiento-03",
@@ -28,9 +30,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 300,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "destacados"
+        "categoria": "destacados",
+        "huespedes": 2
     },
     {
         "id": "alojamiento-04",
@@ -39,9 +42,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 400,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "destacados"
+        "categoria": "destacados",
+        "huespedes": 4
     },
     {
         "id": "alojamiento-05",
@@ -50,9 +54,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 500,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "destacados"
+        "categoria": "destacados",
+        "huespedes": 2
     },
     {
         "id": "alojamiento-06",
@@ -61,9 +66,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 600,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "destacados"
+        "categoria": "destacados",
+        "huespedes": 2
     },
     {
         "id": "alojamiento-07",
@@ -72,9 +78,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 700,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "destacados"
+        "categoria": "destacados",
+        "huespedes": 2
     },
     {
         "id": "alojamiento-08",
@@ -83,9 +90,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 100,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "bariloche" 
+        "categoria": "bariloche",
+        "huespedes":5
     },
     {
         "id": "alojamiento-09",
@@ -94,9 +102,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 200,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "bariloche"
+        "categoria": "bariloche",
+        "huespedes":7
     },
     {
         "id": "alojamiento-10",
@@ -105,9 +114,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 300,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "bariloche"
+        "categoria": "bariloche",
+        "huespedes":2
     },
     {
         "id": "alojamiento-11",
@@ -116,9 +126,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 400,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "bariloche"
+        "categoria": "bariloche",
+        "huespedes":4
     },
     {
         "id": "alojamiento-12",
@@ -127,9 +138,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 500,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "bariloche"
+        "categoria": "bariloche",
+        "huespedes":2
     },
     {
         "id": "alojamiento-13",
@@ -138,9 +150,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 600,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "bariloche"
+        "categoria": "bariloche",
+        "huespedes":2
     },
     {
         "id": "alojamiento-14",
@@ -149,9 +162,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 700,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "bariloche"
+        "categoria": "bariloche",
+        "huespedes":2
     },
     {
         "id": "alojamiento-15",
@@ -160,9 +174,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 100,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "misiones" 
+        "categoria": "misiones",
+        "huespedes":5
     },
     {
         "id": "alojamiento-16",
@@ -171,9 +186,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 200,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "misiones"
+        "categoria": "misiones",
+        "huespedes":7
     },
     {
         "id": "alojamiento-17",
@@ -182,9 +198,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 300,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "misiones"
+        "categoria": "misiones",
+        "huespedes":2
     },
     {
         "id": "alojamiento-18",
@@ -193,9 +210,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 400,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "misiones"
+        "categoria": "misiones",
+        "huespedes":4
     },
     {
         "id": "alojamiento-19",
@@ -204,9 +222,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 500,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "misiones"
+        "categoria": "misiones",
+        "huespedes":2
     },
     {
         "id": "alojamiento-20",
@@ -215,9 +234,10 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 600,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "misiones"
+        "categoria": "misiones",
+        "huespedes":2
     },
     {
         "id": "alojamiento-21",
@@ -226,8 +246,9 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, beatae",
         "ubicacion": "https://maps.app.goo.gl/kfvgyL4pdNiLvxkKA",
         "precio": 700,
-        "dias-disponibles": 10,
+        "diasDisponibles": 10,
         "puntuacion": 4.95,
-        "categoria": "misiones"
+        "categoria": "misiones",
+        "huespedes":2
     }
 ]
