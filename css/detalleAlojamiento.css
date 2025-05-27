@@ -1,8 +1,16 @@
-body {
+* {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f8f8;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     .container {
@@ -103,15 +111,6 @@ body {
       border: none;
       border-radius: 8px;
       cursor: pointer;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
     }
 
     .reserva-card {
