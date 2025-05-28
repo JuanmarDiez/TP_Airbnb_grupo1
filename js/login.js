@@ -11,5 +11,5 @@ loginForm.addEventListener ("submit", (e)=>{
         return alert ("Usuario o contraseña incorrecto")
     }
     alert (`Bienvenido ${validUser.nombre}` );
-    window.location.href ="index.html";
+    window.location.href ="/";
 });
