@@ -42,7 +42,6 @@ window.addEventListener('load', function(){
 
                         <div class="ratings">
                             <div>🏅 Favorito entre huéspedes</div>
-                            <div>🌟 ${puntuacion}<span class="star">★★★★★</span> (86 Evaluaciones)</div>
                         </div>
 
                         <div class="description">${descripcion}</div>
