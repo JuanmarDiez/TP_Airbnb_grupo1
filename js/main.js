@@ -49,7 +49,7 @@ function cargarAlojamientos(alojamientos) {
             <img src="${imagen}" alt="${titulo}">
             <div class="card-body">
                 <h4>${titulo}</h4>
-                <p>$${precio} USD - ★ ${puntuacion}</p>
+                <p>$${precio} USD</p>
             </div>
             `;
 
