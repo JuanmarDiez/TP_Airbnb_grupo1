@@ -61,7 +61,7 @@ header {
 }
 
 .nav-links a.nuevo::after {
-  display: inline-block;
+    display: inline-block;
 }
 
 /* Buscador */
@@ -84,7 +84,7 @@ header {
 }
 
 .search-icon {
-  	background-color: #ff385c;
+    background-color: #ff385c;
     color: white;
     border-radius: 50%;
     padding: 8px;
@@ -93,9 +93,6 @@ header {
 
 /* Iconos derechos */
 .right-icons {
-    display: flex;
-    align-items: center;
-	gap: 16px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.418);
     padding: 5px 10px;
     border-radius: 30px;
@@ -132,10 +129,6 @@ h2 {
 h4{
     max-width: 230px;
 }
-
-/*.carousel-container {
-    position: relative;
-}*/
 
 .carousel {
     display: flex;
@@ -197,94 +190,4 @@ h4{
     cursor: pointer;
     padding: 10px;
     z-index: 1;
-}
-
-/*.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}*/
-
-
-/* Login*/
-
-/*style.css*/
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f3f3;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.main {
-    background-color: white;
-    padding: 30px 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    width: 350px;
-    text-align: center;
-}
-
-h1 {
-    color: #d32f2f; 
-    margin-bottom: 10px;
-}
-
-h3 {
-    color: #555;
-    font-weight: normal;
-    margin-bottom: 25px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    text-align: left;
-    font-weight: bold;
-    color: #333;
-}
-
-input[type="tel"],
-input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 7px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: 1rem;
-}
-
-.wrap {
-    margin-top: 10px;
-}
-
-button.btn-red {
-    background-color: #d32f2f;
-    border: none;
-    padding: 15px;
-    width: 100%;
-    color: white;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-button.btn-red:hover {
-    background-color: #b02727;
-}
-
-a {
-    color: #d32f2f;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
