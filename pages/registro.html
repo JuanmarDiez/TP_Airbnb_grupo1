@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title> Registrarse</title>
+    <link rel="shortcut icon" href="../assets/imgs/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/login.css" />
 </head>
-
 <body>
 
     <header>
@@ -19,30 +18,34 @@
             </a>
         </div>
     </header>
+    
     <div class="inicio-card">
-    <div class="main">
-        <h1>Te damos la bienvenida a Airbnb</h1>
-        <h3>Ingresa tus datos</h3>
+        <div class="main">
+            <h1>Te damos la bienvenida a Airbnb</h1>
+            <h3>Ingresa tus datos</h3>
+    
+            <form id="registroForm">
+                <label for="Nombre">Nombre </label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required />
+    
+    
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Ingrese su email" required />
+    
+                <label for="contraseña">Contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese contraseña" required />
+    
+    
+                <div class="wrap">
+                    <button class="btn-red" type="submit">Registro</button>
+                </div>
 
-<form id="registroForm">
-    <label for="Nombre">Nombre </label>
-    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required />
+            </form>
 
-
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Ingrese su email" required />
-
-    <label for="contraseña">Contraseña</label>
-    <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese contraseña" required />
-
-
-    <div class="wrap">
-        <button class="btn-red" type="submit">Registro</button>
+            <p>Ya tienes cuenta? <a href="login.html">Inicio de sesion</a></p>
+        </div>
     </div>
-</form>
-    <p>Ya tienes cuenta? <a href="login.html">Inicio de sesion</a></p>
-</div>
-</div>
-<script src="../js/registro.js"> </script>
+    
+    <script src="../js/registro.js"> </script>
 </body>
 </html>

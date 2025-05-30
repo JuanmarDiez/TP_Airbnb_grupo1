@@ -19,7 +19,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_Bélo.svg" alt="Airbnb Logo">
       </a>
     </div>
-  
+
     <!-- Buscador -->
     <div class="search-box">
       <span>¿Dónde?</span>
@@ -27,11 +27,14 @@
       <span>¿Cuántos?</span>
       <span class="search-icon">🔍</span>
     </div>
-  
+
     <!-- Iconos derechos -->
     <div class="right-icons">
       <a href="./login.html">
-        <button>Iniciar Sesion | Registrarse</button>
+        <button>Iniciar Sesion </button>
+      </a>
+      <a href="./registro.html">
+        <button>Registrarse</button>
       </a>
     </div>
   </header>
@@ -41,26 +44,24 @@
 
     <div class="reserva-card">
       <h2>
-        <stron id="precio-reserva">$ USD</stron> <span>por 14 noches</span>
+        <stron id="precio-reserva">$ USD</stron> <span>por noche</span>
       </h2>
 
       <div class="fecha-container">
         <div class="fecha">
           <label>CHECK-IN</label>
-          <input type="text" id="checkin" placeholder="Selecciona fecha" readonly />
+          <input type="text" id="checkin" placeholder="Selecciona fecha" readonly required />
         </div>
         <div class="fecha">
           <label>CHECK-OUT</label>
-          <input type="text" id="checkout" placeholder="Selecciona fecha" readonly />
+          <input type="text" id="checkout" placeholder="Selecciona fecha" readonly required />
         </div>
       </div>
 
-      <!-- CONTENEDOR DE VIAJEROS -->
       <div class="viajeros" id="viajerosBox">
         <label>VIAJEROS</label>
         <div id="viajerosToggle">1 viajero ▼</div>
 
-        <!-- Desplegable  -->
         <div id="viajerosDropdown" class="viajeros-dropdown">
           <div class="grupo">
             <div>
@@ -112,19 +113,19 @@
         </div>
       </div>
 
-      <button class="btn-reservar">Reservar</button>
+      <button id="button-confirmar" class="btn-reservar">Reservar</button>
+  
       <div class="info">No vamos a cobrarte ningún cargo por el momento</div>
     </div>
-  </div>
+  </div> 
 
-  <script src="../js/detalle.js"></script>
+  <script src="../js/detalle.js" type="module"></script>
   <script src="../js/json/alojamientos.json"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>
     const checkin = document.getElementById("checkin");
     const checkout = document.getElementById("checkout");
 
-    // Configurar Flatpickr en modo rango para vincular check-in y check-out
     const fpCheckin = flatpickr(checkin, {
       dateFormat: "d/m/Y",
       minDate: "today",
@@ -144,9 +145,15 @@
         }
       },
     });
-  </script>
 
-  <script>
+    function getDays() {
+      let start = fpCheckin.selectedDates[0];
+      let end = fpCheckout.selectedDates[0];
+      let days = (end - start) / 1000 / 60 / 60 / 24;
+
+      return days;
+    }
+
     const viajerosDropdown = document.getElementById("viajerosDropdown");
     const viajerosToggle = document.getElementById("viajerosToggle");
 
@@ -166,14 +173,14 @@
     }
 
     function cambiarContador(tipo, cambio) {
-      const maxPersonas = 2; // sin contar bebés
+      const maxPersonas = 2;
       const totalPersonas = contadores.adultos + contadores.ninos;
       const nuevos = contadores[tipo] + cambio;
 
       if (nuevos < 0) return;
       if ((tipo === "adultos" || tipo === "ninos") && nuevos + (tipo === "adultos" ? contadores.ninos : contadores.adultos) > maxPersonas)
         return;
-      if (tipo === "mascotas") return; // no se permiten mascotas
+      if (tipo === "mascotas") return;
 
       contadores[tipo] = nuevos;
       document.getElementById(tipo).textContent = nuevos;
@@ -189,14 +196,35 @@
       viajerosDropdown.style.display = "none";
     }
 
-    // Click fuera del dropdown lo cierra
     document.addEventListener("click", function (event) {
       if (!document.getElementById("viajerosBox").contains(event.target)) {
         cerrarViajeros();
       }
     });
 
-    actualizarTexto(); // Inicializa
+    actualizarTexto();
+
+    const buttonConfirm = document.querySelector("#button-confirmar");
+
+    buttonConfirm.addEventListener("click", (e) => {
+      e.preventDefault();
+    
+      let uid = (location.search).replace('?', '');
+      const start = fpCheckin.selectedDates[0].toLocaleDateString();
+      const end = fpCheckout.selectedDates[0].toLocaleDateString();
+      const days = getDays();
+      const adultos = contadores.adultos;
+      const ninos = contadores.ninos;
+      const bebes = contadores.bebes;
+      const mascotas = contadores.mascotas;
+      
+      const reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+
+      reservas.push({uid, start, end, days, adultos, ninos, bebes, mascotas });
+      localStorage.setItem("reservas", JSON.stringify(reservas));
+
+      window.location.href =`./confirmacionReserva.html?${uid}`;
+    });
   </script>
 </body>
 </html>
