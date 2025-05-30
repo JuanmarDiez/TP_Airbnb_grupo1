@@ -1,202 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE-edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detalles del alojamiento</title>
-  <link rel="shortcut icon" href="../assets/imgs/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="../css/detalleAlojamiento.css" />
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
-</head>
-<body>
-  <header>
-    <div class="logo">
-      <a href="/">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_Bélo.svg" alt="Airbnb Logo">
-      </a>
-    </div>
-  
-    <!-- Buscador -->
-    <div class="search-box">
-      <span>¿Dónde?</span>
-      <span>¿Cuándo?</span>
-      <span>¿Cuántos?</span>
-      <span class="search-icon">🔍</span>
-    </div>
-  
-    <!-- Iconos derechos -->
-    <div class="right-icons">
-      <a href="./login.html">
-        <button>Iniciar Sesion | Registrarse</button>
-      </a>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles del alojamiento</title>
+    <link
+      rel="shortcut icon"
+      href="../assets/imgs/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/detalleAlojamiento.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+  </head>
+  <body>
+    <site-header></site-header>
 
-  <div class="detalle-completo">
-    <div id="detalleAlojamiento"></div>
+    <div class="detalle-completo">
+      <div id="detalleAlojamiento"></div>
 
-    <div class="reserva-card">
-      <h2>
-        <stron id="precio-reserva">$ USD</stron> <span>por 14 noches</span>
-      </h2>
+      <div class="reserva-card">
+        <h2>
+          <stron id="precio-reserva">$ USD</stron> <span>por 14 noches</span>
+        </h2>
 
-      <div class="fecha-container">
-        <div class="fecha">
-          <label>CHECK-IN</label>
-          <input type="text" id="checkin" placeholder="Selecciona fecha" readonly />
+        <div class="fecha-container">
+          <div class="fecha">
+            <label>CHECK-IN</label>
+            <input
+              type="text"
+              id="checkin"
+              placeholder="Selecciona fecha"
+              readonly
+            />
+          </div>
+          <div class="fecha">
+            <label>CHECK-OUT</label>
+            <input
+              type="text"
+              id="checkout"
+              placeholder="Selecciona fecha"
+              readonly
+            />
+          </div>
         </div>
-        <div class="fecha">
-          <label>CHECK-OUT</label>
-          <input type="text" id="checkout" placeholder="Selecciona fecha" readonly />
+
+        <!-- CONTENEDOR DE VIAJEROS -->
+        <div class="viajeros" id="viajerosBox">
+          <label>VIAJEROS</label>
+          <div id="viajerosToggle">1 viajero ▼</div>
+
+          <!-- Desplegable  -->
+          <div id="viajerosDropdown" class="viajeros-dropdown">
+            <div class="grupo">
+              <div>
+                <strong>Adultos</strong><br />
+                <span>Edad: más de 13 años</span>
+              </div>
+              <div class="contador">
+                <button onclick="cambiarContador('adultos', -1)">−</button>
+                <span id="adultos">1</span>
+                <button onclick="cambiarContador('adultos', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="grupo">
+              <div>
+                <strong>Niños</strong><br />
+                <span>De 2 a 12 años</span>
+              </div>
+              <div class="contador">
+                <button onclick="cambiarContador('ninos', -1)">−</button>
+                <span id="ninos">0</span>
+                <button onclick="cambiarContador('ninos', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="grupo">
+              <div>
+                <strong>Bebés</strong><br />
+                <span>Menos de 2 años</span>
+              </div>
+              <div class="contador">
+                <button onclick="cambiarContador('bebes', -1)">−</button>
+                <span id="bebes">0</span>
+                <button onclick="cambiarContador('bebes', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="grupo">
+              <div>
+                <strong>Mascotas</strong><br />
+                <span
+                  ><a href="#">¿Vas a llevar un animal de servicio?</a></span
+                >
+              </div>
+              <div class="contador">
+                <button onclick="cambiarContador('mascotas', -1)">−</button>
+                <span id="mascotas">0</span>
+                <button onclick="cambiarContador('mascotas', 1)">+</button>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <button class="btn-reservar">Reservar</button>
+        <div class="info">No vamos a cobrarte ningún cargo por el momento</div>
       </div>
-
-      <!-- CONTENEDOR DE VIAJEROS -->
-      <div class="viajeros" id="viajerosBox">
-        <label>VIAJEROS</label>
-        <div id="viajerosToggle">1 viajero ▼</div>
-
-        <!-- Desplegable  -->
-        <div id="viajerosDropdown" class="viajeros-dropdown">
-          <div class="grupo">
-            <div>
-              <strong>Adultos</strong><br />
-              <span>Edad: más de 13 años</span>
-            </div>
-            <div class="contador">
-              <button onclick="cambiarContador('adultos', -1)">−</button>
-              <span id="adultos">1</span>
-              <button onclick="cambiarContador('adultos', 1)">+</button>
-            </div>
-          </div>
-
-          <div class="grupo">
-            <div>
-              <strong>Niños</strong><br />
-              <span>De 2 a 12 años</span>
-            </div>
-            <div class="contador">
-              <button onclick="cambiarContador('ninos', -1)">−</button>
-              <span id="ninos">0</span>
-              <button onclick="cambiarContador('ninos', 1)">+</button>
-            </div>
-          </div>
-
-          <div class="grupo">
-            <div>
-              <strong>Bebés</strong><br />
-              <span>Menos de 2 años</span>
-            </div>
-            <div class="contador">
-              <button onclick="cambiarContador('bebes', -1)">−</button>
-              <span id="bebes">0</span>
-              <button onclick="cambiarContador('bebes', 1)">+</button>
-            </div>
-          </div>
-
-          <div class="grupo">
-            <div>
-              <strong>Mascotas</strong><br />
-              <span><a href="#">¿Vas a llevar un animal de servicio?</a></span>
-            </div>
-            <div class="contador">
-              <button onclick="cambiarContador('mascotas', -1)">−</button>
-              <span id="mascotas">0</span>
-              <button onclick="cambiarContador('mascotas', 1)">+</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <button class="btn-reservar">Reservar</button>
-      <div class="info">No vamos a cobrarte ningún cargo por el momento</div>
     </div>
-  </div>
+    <script src="/js/components/header-component.js" defer></script>
+    <script src="../js/detalle.js"></script>
+    <script src="../js/json/alojamientos.json"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      const checkin = document.getElementById("checkin");
+      const checkout = document.getElementById("checkout");
 
-  <script src="../js/detalle.js"></script>
-  <script src="../js/json/alojamientos.json"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script>
-    const checkin = document.getElementById("checkin");
-    const checkout = document.getElementById("checkout");
+      // Configurar Flatpickr en modo rango para vincular check-in y check-out
+      const fpCheckin = flatpickr(checkin, {
+        dateFormat: "d/m/Y",
+        minDate: "today",
+        onChange: function (selectedDates) {
+          if (selectedDates.length > 0) {
+            fpCheckout.set("minDate", selectedDates[0]);
+          }
+        },
+      });
 
-    // Configurar Flatpickr en modo rango para vincular check-in y check-out
-    const fpCheckin = flatpickr(checkin, {
-      dateFormat: "d/m/Y",
-      minDate: "today",
-      onChange: function (selectedDates) {
-        if (selectedDates.length > 0) {
-          fpCheckout.set("minDate", selectedDates[0]);
-        }
-      },
-    });
+      const fpCheckout = flatpickr(checkout, {
+        dateFormat: "d/m/Y",
+        minDate: "today",
+        onChange: function (selectedDates) {
+          if (selectedDates.length > 0) {
+            fpCheckin.set("maxDate", selectedDates[0]);
+          }
+        },
+      });
+    </script>
 
-    const fpCheckout = flatpickr(checkout, {
-      dateFormat: "d/m/Y",
-      minDate: "today",
-      onChange: function (selectedDates) {
-        if (selectedDates.length > 0) {
-          fpCheckin.set("maxDate", selectedDates[0]);
-        }
-      },
-    });
-  </script>
+    <script>
+      const viajerosDropdown = document.getElementById("viajerosDropdown");
+      const viajerosToggle = document.getElementById("viajerosToggle");
 
-  <script>
-    const viajerosDropdown = document.getElementById("viajerosDropdown");
-    const viajerosToggle = document.getElementById("viajerosToggle");
+      const contadores = {
+        adultos: 1,
+        ninos: 0,
+        bebes: 0,
+        mascotas: 0,
+      };
 
-    const contadores = {
-      adultos: 1,
-      ninos: 0,
-      bebes: 0,
-      mascotas: 0,
-    };
-
-    function actualizarTexto() {
-      const total = contadores.adultos + contadores.ninos;
-      let texto = `${total} viajero${total !== 1 ? "s" : ""}`;
-      if (contadores.bebes > 0)
-        texto += `, ${contadores.bebes} bebé${contadores.bebes !== 1 ? "s" : ""}`;
-      viajerosToggle.textContent = texto + " ▼";
-    }
-
-    function cambiarContador(tipo, cambio) {
-      const maxPersonas = 2; // sin contar bebés
-      const totalPersonas = contadores.adultos + contadores.ninos;
-      const nuevos = contadores[tipo] + cambio;
-
-      if (nuevos < 0) return;
-      if ((tipo === "adultos" || tipo === "ninos") && nuevos + (tipo === "adultos" ? contadores.ninos : contadores.adultos) > maxPersonas)
-        return;
-      if (tipo === "mascotas") return; // no se permiten mascotas
-
-      contadores[tipo] = nuevos;
-      document.getElementById(tipo).textContent = nuevos;
-      actualizarTexto();
-    }
-
-    viajerosToggle.addEventListener("click", () => {
-      viajerosDropdown.style.display =
-        viajerosDropdown.style.display === "block" ? "none" : "block";
-    });
-
-    function cerrarViajeros() {
-      viajerosDropdown.style.display = "none";
-    }
-
-    // Click fuera del dropdown lo cierra
-    document.addEventListener("click", function (event) {
-      if (!document.getElementById("viajerosBox").contains(event.target)) {
-        cerrarViajeros();
+      function actualizarTexto() {
+        const total = contadores.adultos + contadores.ninos;
+        let texto = `${total} viajero${total !== 1 ? "s" : ""}`;
+        if (contadores.bebes > 0)
+          texto += `, ${contadores.bebes} bebé${
+            contadores.bebes !== 1 ? "s" : ""
+          }`;
+        viajerosToggle.textContent = texto + " ▼";
       }
-    });
 
-    actualizarTexto(); // Inicializa
-  </script>
-</body>
+      function cambiarContador(tipo, cambio) {
+        const maxPersonas = 2; // sin contar bebés
+        const totalPersonas = contadores.adultos + contadores.ninos;
+        const nuevos = contadores[tipo] + cambio;
+
+        if (nuevos < 0) return;
+        if (
+          (tipo === "adultos" || tipo === "ninos") &&
+          nuevos +
+            (tipo === "adultos" ? contadores.ninos : contadores.adultos) >
+            maxPersonas
+        )
+          return;
+        if (tipo === "mascotas") return; // no se permiten mascotas
+
+        contadores[tipo] = nuevos;
+        document.getElementById(tipo).textContent = nuevos;
+        actualizarTexto();
+      }
+
+      viajerosToggle.addEventListener("click", () => {
+        viajerosDropdown.style.display =
+          viajerosDropdown.style.display === "block" ? "none" : "block";
+      });
+
+      function cerrarViajeros() {
+        viajerosDropdown.style.display = "none";
+      }
+
+      // Click fuera del dropdown lo cierra
+      document.addEventListener("click", function (event) {
+        if (!document.getElementById("viajerosBox").contains(event.target)) {
+          cerrarViajeros();
+        }
+      });
+
+      actualizarTexto(); // Inicializa
+    </script>
+  </body>
 </html>
