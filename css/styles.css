@@ -93,9 +93,24 @@ header {
 
 /* Iconos derechos */
 .right-icons {
+}
+.right-icons .button{
     box-shadow: 0 2px 5px rgba(0,0,0,0.418);
     padding: 5px 10px;
     border-radius: 30px;
+    text-decoration: none!important;
+    margin-right: 5px;
+}
+.right-icons .button-hover{
+    padding: 5px 10px;
+    border-radius: 30px;
+    text-decoration: none!important;
+    margin-right: 5px;
+}
+
+.right-icons .button-hover:hover{
+    box-shadow: 0 2px 5px rgba(0,0,0,0.418);
+
 }
 
 .right-icons button {
