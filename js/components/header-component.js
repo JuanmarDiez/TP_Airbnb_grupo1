@@ -11,14 +11,6 @@ class SiteHeader extends HTMLElement {
         </a>
       </div>
 
-      <!-- Buscador -->
-      <div class="search-box">
-        <span>¿Dónde?</span>
-        <span>¿Cuándo?</span>
-        <span>¿Cuántos?</span>
-        <span class="search-icon">🔍</span>
-      </div>
-
       <!-- Iconos derechos -->
       <div class="right-icons">
         <a
