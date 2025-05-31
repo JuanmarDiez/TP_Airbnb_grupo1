@@ -38,7 +38,7 @@ function cargarAlojamientos(alojamientos) {
         
         list[i].forEach( alojamiento => {
 
-            const {id, imagen, titulo, precio, puntuacion} = alojamiento;
+            const {id, imagen, titulo, precio} = alojamiento;
 
             const item = document.createElement("div");
             item.classList.add("card");
