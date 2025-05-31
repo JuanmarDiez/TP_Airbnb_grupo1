@@ -45,7 +45,7 @@ window.addEventListener('load', function(){
                         </div>
 
                         <div class="description">${descripcion}</div>
-                        <button class="show-more">Mostrar más</button>
+                        
                     </div>
                 </div>
                 
