@@ -13,39 +13,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <a href="/">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_Bélo.svg" alt="Airbnb Logo">
-      </a>
-    </div>
+  <site-header></site-header>
 
-    <!-- Buscador -->
-    <div class="search-box">
-      <span>¿Dónde?</span>
-      <span>¿Cuándo?</span>
-      <span>¿Cuántos?</span>
-      <span class="search-icon">🔍</span>
-    </div>
+    <div class="detalle-completo">
+      <div id="detalleAlojamiento"></div>
 
-    <!-- Iconos derechos -->
-    <div class="right-icons">
-      <a href="./login.html">
-        <button>Iniciar Sesion </button>
-      </a>
-      <a href="./registro.html">
-        <button>Registrarse</button>
-      </a>
-    </div>
-  </header>
-
-  <div class="detalle-completo">
-    <div id="detalleAlojamiento"></div>
-
-    <div class="reserva-card">
-      <h2>
-        <stron id="precio-reserva">$ USD</stron> <span>por noche</span>
-      </h2>
+      <div class="reserva-card">
+        <h2>
+          <stron id="precio-reserva">$ USD</stron> <span>por 14 noches</span>
+        </h2>
 
       <div class="fecha-container">
         <div class="fecha">
@@ -75,56 +51,58 @@
             </div>
           </div>
 
-          <div class="grupo">
-            <div>
-              <strong>Niños</strong><br />
-              <span>De 2 a 12 años</span>
+            <div class="grupo">
+              <div>
+                <strong>Niños</strong><br />
+                <span>De 2 a 12 años</span>
+              </div>
+              <div class="contador">
+                <button onclick="cambiarContador('ninos', -1)">−</button>
+                <span id="ninos">0</span>
+                <button onclick="cambiarContador('ninos', 1)">+</button>
+              </div>
             </div>
-            <div class="contador">
-              <button onclick="cambiarContador('ninos', -1)">−</button>
-              <span id="ninos">0</span>
-              <button onclick="cambiarContador('ninos', 1)">+</button>
-            </div>
-          </div>
 
-          <div class="grupo">
-            <div>
-              <strong>Bebés</strong><br />
-              <span>Menos de 2 años</span>
+            <div class="grupo">
+              <div>
+                <strong>Bebés</strong><br />
+                <span>Menos de 2 años</span>
+              </div>
+              <div class="contador">
+                <button onclick="cambiarContador('bebes', -1)">−</button>
+                <span id="bebes">0</span>
+                <button onclick="cambiarContador('bebes', 1)">+</button>
+              </div>
             </div>
-            <div class="contador">
-              <button onclick="cambiarContador('bebes', -1)">−</button>
-              <span id="bebes">0</span>
-              <button onclick="cambiarContador('bebes', 1)">+</button>
-            </div>
-          </div>
 
-          <div class="grupo">
-            <div>
-              <strong>Mascotas</strong><br />
-              <span><a href="#">¿Vas a llevar un animal de servicio?</a></span>
-            </div>
-            <div class="contador">
-              <button onclick="cambiarContador('mascotas', -1)">−</button>
-              <span id="mascotas">0</span>
-              <button onclick="cambiarContador('mascotas', 1)">+</button>
+            <div class="grupo">
+              <div>
+                <strong>Mascotas</strong><br />
+                <span
+                  ><a href="#">¿Vas a llevar un animal de servicio?</a></span
+                >
+              </div>
+              <div class="contador">
+                <button onclick="cambiarContador('mascotas', -1)">−</button>
+                <span id="mascotas">0</span>
+                <button onclick="cambiarContador('mascotas', 1)">+</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <button id="button-confirmar" class="btn-reservar">Reservar</button>
-  
+        <button id="button-confirmar" class="btn-reservar">Reservar</button>
+    
       <div class="info">No vamos a cobrarte ningún cargo por el momento</div>
-    </div>
-  </div> 
-
-  <script src="../js/detalle.js" type="module"></script>
-  <script src="../js/json/alojamientos.json"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script>
-    const checkin = document.getElementById("checkin");
-    const checkout = document.getElementById("checkout");
+      </div>
+    </div> 
+    <script src="/js/components/header-component.js" defer></script>
+    <script src="../js/detalle.js" type="module"></script>
+    <script src="../js/json/alojamientos.json"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      const checkin = document.getElementById("checkin");
+      const checkout = document.getElementById("checkout");
 
     const fpCheckin = flatpickr(checkin, {
       dateFormat: "d/m/Y",
@@ -157,20 +135,22 @@
     const viajerosDropdown = document.getElementById("viajerosDropdown");
     const viajerosToggle = document.getElementById("viajerosToggle");
 
-    const contadores = {
-      adultos: 1,
-      ninos: 0,
-      bebes: 0,
-      mascotas: 0,
-    };
+      const contadores = {
+        adultos: 1,
+        ninos: 0,
+        bebes: 0,
+        mascotas: 0,
+      };
 
-    function actualizarTexto() {
-      const total = contadores.adultos + contadores.ninos;
-      let texto = `${total} viajero${total !== 1 ? "s" : ""}`;
-      if (contadores.bebes > 0)
-        texto += `, ${contadores.bebes} bebé${contadores.bebes !== 1 ? "s" : ""}`;
-      viajerosToggle.textContent = texto + " ▼";
-    }
+      function actualizarTexto() {
+        const total = contadores.adultos + contadores.ninos;
+        let texto = `${total} viajero${total !== 1 ? "s" : ""}`;
+        if (contadores.bebes > 0)
+          texto += `, ${contadores.bebes} bebé${
+            contadores.bebes !== 1 ? "s" : ""
+          }`;
+        viajerosToggle.textContent = texto + " ▼";
+      }
 
     function cambiarContador(tipo, cambio) {
       const maxPersonas = 2;
@@ -182,19 +162,19 @@
         return;
       if (tipo === "mascotas") return;
 
-      contadores[tipo] = nuevos;
-      document.getElementById(tipo).textContent = nuevos;
-      actualizarTexto();
-    }
+        contadores[tipo] = nuevos;
+        document.getElementById(tipo).textContent = nuevos;
+        actualizarTexto();
+      }
 
-    viajerosToggle.addEventListener("click", () => {
-      viajerosDropdown.style.display =
-        viajerosDropdown.style.display === "block" ? "none" : "block";
-    });
+      viajerosToggle.addEventListener("click", () => {
+        viajerosDropdown.style.display =
+          viajerosDropdown.style.display === "block" ? "none" : "block";
+      });
 
-    function cerrarViajeros() {
-      viajerosDropdown.style.display = "none";
-    }
+      function cerrarViajeros() {
+        viajerosDropdown.style.display = "none";
+      }
 
     document.addEventListener("click", function (event) {
       if (!document.getElementById("viajerosBox").contains(event.target)) {

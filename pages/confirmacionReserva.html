@@ -7,19 +7,14 @@
     <link rel="shortcut icon" href="../assets/imgs/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/confirmacionReserva.css" />
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <a href="/">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_Bélo.svg" alt="Airbnb Logo">
-            </a>
-        </div>
-    </header>
-    
-    <div id="confirmacionContenedor" class="body-confirmacion">
-        <div>
-                <div class="card">
-                    <h3>1. Agregá un método de pago</h3>
+
+<body >
+    <site-header></site-header>
+<div class="body-confirmacion">
+    <div>
+        
+        <div class="card">
+            <h3>1. Agregá un método de pago</h3>
 
                         <div class="payment-method-header">
                     <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png" class="card-icon" alt="Tarjeta" />
@@ -72,6 +67,7 @@
         </div>
     </div>
 
+    <script src="/js/components/header-component.js" defer></script>
     <script src="../js/confirmacion.js" type="module"></script>
     <script>
         function listo(){
@@ -79,5 +75,6 @@
             window.location.href =`/`;
         }
     </script>
+
 </body>
 </html>

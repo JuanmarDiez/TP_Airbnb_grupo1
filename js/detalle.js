@@ -44,12 +44,12 @@ alojamientos
                                 <div>🏅 Favorito entre huéspedes</div>
                             </div>
 
-                            <div class="description">${descripcion}</div>
-                            <button class="show-more">Mostrar más</button>
-                        </div>
+                        <div class="description">${descripcion}</div>
+                        
                     </div>
-                    
                 </div>
+                
+            </div>
 
             </div>
             `;
