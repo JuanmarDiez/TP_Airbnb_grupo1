@@ -22,7 +22,7 @@ class SiteHeader extends HTMLElement {
         <a href="/pages/login.html" class="button">
           <button>Iniciar Sesion</button>
         </a>
-        <a href="/pages/registro.html" class="button">
+        <a href="./pages/registro.html" class="button">
           <button>Registrarse</button>
         </a>
       </div>
