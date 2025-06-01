@@ -20,9 +20,35 @@
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
   padding: 16px;
   font-size: 20px;
   font-weight: bold;
+}
+
+.anfitrion {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-inline: 16px;
+}
+
+.anfitrion a {
+	text-decoration: none;
+  color: black;
+}
+
+.anfitrion span {
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.anfitrion img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
 }
 
 .images {
