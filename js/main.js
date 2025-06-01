@@ -38,7 +38,7 @@ function cargarAlojamientos(alojamientos) {
         
         list[i].forEach( alojamiento => {
 
-            const {id, imagen, titulo, precio, puntuacion} = alojamiento;
+            const {id, imagen, titulo, precio} = alojamiento;
 
             const item = document.createElement("div");
             item.classList.add("card");
@@ -46,11 +46,12 @@ function cargarAlojamientos(alojamientos) {
             item.classList.add("rounded-3");
             item.innerHTML += `
             <a href="./pages/detalle.html?${id}">
-            <img src="${imagen}" alt="${titulo}">
-            <div class="card-body">
-                <h4>${titulo}</h4>
-                <p>$${precio} USD</p>
-            </div>
+                <img src="${imagen}" alt="${titulo}">
+                <div class="card-body">
+                    <h4>${titulo}</h4>
+                    <p>$${precio} USD</p>
+                </div>
+            </a>
             `;
 
             catContenedor.append(item);

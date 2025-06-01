@@ -1,59 +1,84 @@
 let detalleContenedor = document.querySelector("#detalleAlojamiento");
 
-window.addEventListener('load', function(){
+export let uid = (location.search).replace('?', '');
 
-    let uid = (location.search).replace('?','');
-    
-    const pedirAlojamientos = async () => {
-    const resp = await fetch ("../js/json/alojamientos.json");
+export const pedirAlojamientos = async() => {
+    const resp = await fetch("../js/json/alojamientos.json");
     let alojamientos = await resp.json();
     return alojamientos;
-    }
+}
 
-    let alojamientos = pedirAlojamientos();
-    alojamientos
-    .then ( alojamientos => {
+export let alojamientos = pedirAlojamientos();
+
+const pedirAnfitriones = async() => {
+    const resp = await fetch("../js/json/anfitriones.json");
+    let anfitriones = await resp.json();
+    return anfitriones;
+}
+
+let anfitriones = pedirAnfitriones();
+
+alojamientos
+    .then(alojamientos => {
         const alojamientoAux = alojamientos.find(alojamiento => alojamiento.id === uid);
-        console.log(uid);
 
-        const {imagen, titulo, precio, huespedes, descripcion, diasDisponibles, puntuacion} = alojamientoAux;
+        const {id, imagen, titulo, precio, huespedes, descripcion, diasDisponibles, anfitrionId } = alojamientoAux;
 
         document.title = titulo;
 
         let precioReserva = document.querySelector("#precio-reserva");
 
-        precioReserva.textContent = `$${precio} USD`;
+        if (precioReserva)
+            precioReserva.textContent = `$${precio} USD`;
 
-        detalleContenedor.innerHTML = `
-        <div class="container">  
-            <div class="header">${titulo}</div>
-                <div class="images">
-                    <div class="main-image">
-                        <img src="${imagen}" alt="Interior principal">
+        anfitriones
+        .then(anfitriones => {
+            const anfitrion = anfitriones.find(a => a.id === anfitrionId);
+
+            if (detalleContenedor)
+                detalleContenedor.innerHTML = `
+                <div class="container">  
+                    <div class="header">
+                        <span>${titulo}</span>
+                    </div>
+
+                    <div class="images">
+                        <div class="main-image">
+                            <img src="${imagen}" alt="Interior principal">
+                        </div>
+                    </div>
+
+                    <div class="bottom">
+                        <div class="title_description">
+                            <div class="details">
+                                <h2>${titulo}</h2>
+                                <div class="info">${huespedes} huéspedes  ·  ${diasDisponibles} noches</div>
+                            </div>
+
+                            <div class="ratings">
+                                <div>🏅 Favorito entre huéspedes</div>
+                            </div>
+
+                            <div class="description">${descripcion}</div>
+
+                            <div class="anfitrion">
+                                <span>Anfitrion:</span>
+                                <div>
+                                    <a href="../pages/anfitrion.html?${anfitrion.id}">
+                                        <span>${anfitrion.nombre}</span>
+                                        <img src="${anfitrion.foto}" alt="">
+                                    </a>
+                                </div>
+                            </div>   
+                        </div>
                     </div>
                 </div>
+                `;
 
-                <div class="bottom">
-                    <div class="title_description">
-                        <div class="details">
-                            <h2>${titulo}</h2>
-                            <div class="info">${huespedes} huéspedes  ·  ${diasDisponibles} noches</div>
-                        </div>
+            let referenciaConfirmacion = document.querySelector("#referencia-confirmacion");
 
-                        <div class="ratings">
-                            <div>🏅 Favorito entre huéspedes</div>
-                        </div>
-
-                        <div class="description">${descripcion}</div>
-                        <button class="show-more">Mostrar más</button>
-                    </div>
-                </div>
-                
-            </div>
-
-        </div>
-        `;
-
+            if (referenciaConfirmacion)
+                referenciaConfirmacion.setAttribute("href", `./confirmacionReserva.html?${id}`);
+        });
     });
 
-});

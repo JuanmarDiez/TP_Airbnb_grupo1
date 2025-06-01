@@ -1,114 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Confirmacion de reserva</title>
+    <link rel="shortcut icon" href="../assets/imgs/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/confirmacionReserva.css" />
-    
 </head>
-
 <body >
-    <header>
-        <div class="logo">
-            <a href="/">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_Bélo.svg" alt="Airbnb Logo">
-            </a>
-        </div>
-    </header>
-<div class="body-confirmacion">
-    <div>
-        
-        <div class="card">
-            <h3>1. Agregá un método de pago</h3>
+    <site-header></site-header>
 
-            <!-- Tarjeta -->
-            <div class="payment-method-header">
-                <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png" class="card-icon" alt="Tarjeta" />
-                <strong>Tarjeta de crédito o débito</strong>
-                <div class="card-logos">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" />
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Mastercard" />
-                    <img src="//a0.muscache.com/airbnb/static/packages/assets/frontend/legacy-shared/svgs/payments/logo_amex.84088b520ca1b3384cb71398095627da.svg" alt="Amex" />
-                    <img src="//a0.muscache.com/airbnb/static/packages/assets/frontend/legacy-shared/svgs/payments/logo_discover.7f05c82f07d62a0f8a69d54dbcd7c8be.svg" alt="Discover" />
+    <div id="confirmacionContenedor" class="body-confirmacion">
+        <div>
+            <div class="card">
+                <h3>1. Agregá un método de pago</h3>
+
+                <div class="payment-method-header">
+                    <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png" class="card-icon" alt="Tarjeta" />
+                    <strong>Tarjeta de crédito o débito</strong>
+                    <div class="card-logos">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg"
+                            alt="Mastercard" />
+                        <img src="//a0.muscache.com/airbnb/static/packages/assets/frontend/legacy-shared/svgs/payments/logo_amex.84088b520ca1b3384cb71398095627da.svg"
+                            alt="Amex" />
+                        <img src="//a0.muscache.com/airbnb/static/packages/assets/frontend/legacy-shared/svgs/payments/logo_discover.7f05c82f07d62a0f8a69d54dbcd7c8be.svg"
+                            alt="Discover" />
+                    </div>
+                    <input type="radio" name="payment" style="margin-left:auto;" checked />
                 </div>
-                <input type="radio" name="payment" style="margin-left:auto;" checked />
-            </div>
 
-            <input type="text" placeholder="Número de tarjeta 🔒" />
-            <div class="row">
-                <input type="text" placeholder="Vencimiento" />
-                <input type="text" placeholder="CVV" />
-            </div>
-            <input type="text" placeholder="Código postal" />
-            <select>
-                <option selected>Argentina</option>
-                <option>Chile</option>
-                <option>Uruguay</option>
-                <option>España</option>
-            </select>
-
-            <!-- PayPal -->
-            <div class="radio-row">
-                <div class="pay-option-label">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" height="20">
-                    <span>PayPal</span>
+                <input type="text" placeholder="Número de tarjeta 🔒" />
+                <div class="row">
+                    <input type="text" placeholder="Vencimiento" />
+                    <input type="text" placeholder="CVV" />
                 </div>
-                <input type="radio" name="payment" />
-            </div>
+                <input type="text" placeholder="Código postal" />
+                <select>
+                    <option selected>Argentina</option>
+                    <option>Chile</option>
+                    <option>Uruguay</option>
+                    <option>España</option>
+                </select>
 
-            <!-- Google Pay -->
-            <div class="radio-row">
-                <div class="pay-option-label">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/512px-Google_Pay_Logo.svg.png"
-                        alt="Google Pay" height="20">
-                    <span>Google Pay</span>
+                <div class="radio-row">
+                    <div class="pay-option-label">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" height="20">
+                        <span>PayPal</span>
+                    </div>
+                    <input type="radio" name="payment" />
                 </div>
-                <input type="radio" name="payment" />
-            </div>
 
-            <!-- Botón -->
-            <button class="btn">Listo</button>
-        </div>
-    </div>
-    <div>
-        <div class="summary-card">
-            <div class="listing-header">
-                <img src="https://a0.muscache.com/im/pictures/4edaabc1-5e6d-4438-9ef6-cb20aed35cfb.jpg?im_w=320"
-                    alt="Foto del alojamiento">
-                <div class="listing-info">
-                    <h3>Hermoso monoambiente!<br>Ubicación ideal!</h3>
-                    <p>⭐ 4,95 (22)</p>
+                <div class="radio-row">
+                    <div class="pay-option-label">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/512px-Google_Pay_Logo.svg.png"
+                            alt="Google Pay" height="20">
+                        <span>Google Pay</span>
+                    </div>
+                    <input type="radio" name="payment" />
                 </div>
-            </div>
 
-            <p style="font-size: 13px;">Esta reserva no es reembolsable. <a href="#">Política completa</a></p>
-
-            <div class="section">
-                <div class="section-title">
-                    Información del viaje
-                    <button class="change-btn">Cambiar</button>
-                </div>
-                <p>1 – 15 de jun de 2025</p>
-                <p>1 adulto</p>
-            </div>
-
-            <hr style="margin: 16px 0; border: none; border-top: 1px solid #eee;">
-
-            <div class="section">
-                <div class="section-title">Detalles del precio</div>
-                <div class="price-details">
-                    <span>$39,53 USD por 14 noches</span>
-                    <span>$553,47 USD</span>
-                </div>
-                <div class="price-details total">
-                    <span>Total <a href="#">USD</a></span>
-                    <span>$553,47 USD</span>
-                </div>
+                <button onclick="listo()" class="btn">Listo</button>
             </div>
         </div>
     </div>
-</div>
+
+    <script src="/js/components/header-component.js" defer></script>
+    <script src="../js/confirmacion.js" type="module"></script>
+    <script>
+        function listo(){
+            alert("Gracias! Su reserva a sido realizada");
+            window.location.href =`/`;
+        }
+    </script>
 </body>
 </html>

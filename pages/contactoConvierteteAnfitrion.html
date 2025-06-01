@@ -14,18 +14,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
 </head>
 <body>
+  
   <site-header></site-header>
-  <a href="/index.html" class="back-link">← Volver al inicio</a>
+
   <main class="center-wrapper">
 
     <section class="email-card" id="card">
       <h2>¡Hola, futuro anfitrión!</h2>
-      <p>Déjanos tu correo electrónico y un miembro de nuestro equipo se pondrá en contacto contigo en las próximas 24 h para ayudarte a comenzar.</p>
+      <p>Déjanos tu correo electrónico y un miembro de nuestro equipo se pondrá en contacto contigo en las próximas 24 h
+        para ayudarte a comenzar.</p>
 
       <form id="emailForm" novalidate>
         <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email"
-               placeholder="tu@email.com" required>
+        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
         <span class="error-msg" aria-live="polite"></span>
 
         <button type="submit" class="btn-primary">Enviar</button>
@@ -37,10 +38,10 @@
   </main>
 
   <script>
-    const form   = document.getElementById('emailForm');
-    const email  = document.getElementById('email');
-    const error  = document.querySelector('.error-msg');
-    const card   = document.getElementById('card');
+    const form = document.getElementById('emailForm');
+    const email = document.getElementById('email');
+    const error = document.querySelector('.error-msg');
+    const card = document.getElementById('card');
 
     form.addEventListener('submit', e => {
       if (!email.validity.valid) {
@@ -48,7 +49,7 @@
         error.textContent = 'Introduce un e-mail válido, por favor.';
         return;
       }
-      e.preventDefault();             
+      e.preventDefault();
       card.innerHTML = `
         <h2>¡Gracias por tu interés!</h2>
         <p>En breve uno de nuestros asesores se pondrá en contacto contigo para guiarte en los primeros pasos como anfitrión.</p>
@@ -56,9 +57,7 @@
       `;
     });
   </script>
-
-
-</body>
+  
   <script src="/js/components/header-component.js" defer></script>
 </body>
 </html>
