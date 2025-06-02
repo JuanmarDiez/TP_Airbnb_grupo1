@@ -25,8 +25,6 @@ alojamientos
                     </div>
                 </div>
 
-                <p style="font-size: 13px;">Esta reserva no es reembolsable. <a href="#">Política completa</a></p>
-
                 <div class="section">
                     <div class="section-title">
                         Información del viaje
