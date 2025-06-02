@@ -10,11 +10,19 @@ export const pedirAlojamientos = async() => {
 
 export let alojamientos = pedirAlojamientos();
 
+const pedirAnfitriones = async() => {
+    const resp = await fetch("../js/json/anfitriones.json");
+    let anfitriones = await resp.json();
+    return anfitriones;
+}
+
+let anfitriones = pedirAnfitriones();
+
 alojamientos
     .then(alojamientos => {
         const alojamientoAux = alojamientos.find(alojamiento => alojamiento.id === uid);
 
-        const {id, imagen, titulo, precio, huespedes, descripcion, diasDisponibles } = alojamientoAux;
+        const {id, imagen, titulo, precio, huespedes, descripcion, diasDisponibles, anfitrionId } = alojamientoAux;
 
         document.title = titulo;
 
@@ -23,10 +31,17 @@ alojamientos
         if (precioReserva)
             precioReserva.textContent = `$${precio} USD`;
 
-        if (detalleContenedor)
-            detalleContenedor.innerHTML = `
-            <div class="container">  
-                <div class="header">${titulo}</div>
+        anfitriones
+        .then(anfitriones => {
+            const anfitrion = anfitriones.find(a => a.id === anfitrionId);
+
+            if (detalleContenedor)
+                detalleContenedor.innerHTML = `
+                <div class="container">  
+                    <div class="header">
+                        <span>${titulo}</span>
+                    </div>
+
                     <div class="images">
                         <div class="main-image">
                             <img src="${imagen}" alt="Interior principal">
@@ -44,20 +59,26 @@ alojamientos
                                 <div>🏅 Favorito entre huéspedes</div>
                             </div>
 
-                        <div class="description">${descripcion}</div>
-                        
+                            <div class="description">${descripcion}</div>
+
+                            <div class="anfitrion">
+                                <span>Anfitrion:</span>
+                                <div>
+                                    <a href="../pages/anfitrion.html?${anfitrion.id}">
+                                        <span>${anfitrion.nombre}</span>
+                                        <img src="${anfitrion.foto}" alt="">
+                                    </a>
+                                </div>
+                            </div>   
+                        </div>
                     </div>
                 </div>
-                
-            </div>
+                `;
 
-            </div>
-            `;
+            let referenciaConfirmacion = document.querySelector("#referencia-confirmacion");
 
-        let referenciaConfirmacion = document.querySelector("#referencia-confirmacion");
-
-        if (referenciaConfirmacion)
-            referenciaConfirmacion.setAttribute("href", `./confirmacionReserva.html?${id}`);
-
-});
+            if (referenciaConfirmacion)
+                referenciaConfirmacion.setAttribute("href", `./confirmacionReserva.html?${id}`);
+        });
+    });
 

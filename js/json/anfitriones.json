@@ -1,0 +1,20 @@
+[
+    {
+        "id": "anfitrion-01",
+        "nombre": "Juan Garibaldi",
+        "foto": "https://randomuser.me/api/portraits/men/44.jpg",
+        "anio": 2024,
+        "tiempo": "1 año",
+        "cantAlojamientos": 1,
+        "verificacion": "Verificado"
+    },
+    {
+        "id": "anfitrion-02",
+        "nombre": "Romina Quiroga",
+        "foto": "https://randomuser.me/api/portraits/women/44.jpg",
+        "anio" : 2023,
+        "tiempo": "3 años",
+        "cantAlojamientos": 2,
+        "verificacion": "No Verificado"
+    }
+]
