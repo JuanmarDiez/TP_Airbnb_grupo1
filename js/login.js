@@ -11,6 +11,10 @@ loginForm.addEventListener ("submit", (e)=>{
     if (!validUser){
         return alert ("Usuario o contraseña incorrecto")
     }
+
+    // Guardar usuario logueado
+    localStorage.setItem("usuario", validUser.nombre);
+
     alert (`Bienvenido ${validUser.nombre}` );
     window.location.href ="/";
 });
