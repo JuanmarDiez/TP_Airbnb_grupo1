@@ -5,10 +5,9 @@ let confirmacionContenedor = document.querySelector("#confirmacionContenedor");
 alojamientos
     .then(alojamientos => {
         const alojamientoAux = alojamientos.find(alojamiento => alojamiento.id === uid);
-        console.log(uid);
 
         const reservas = JSON.parse(localStorage.getItem("reservas")) || [];
-        const reserva = reservas.find(reserva => reserva.uid === uid);
+        const reserva = [...reservas].reverse().find(reserva => reserva.uid === uid);
 
         const { imagen, titulo, precio } = alojamientoAux;
         const { start, end, days, adultos, ninos, bebes, mascotas } = reserva;
